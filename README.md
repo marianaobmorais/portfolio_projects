@@ -14,7 +14,7 @@ The data includes data on confirmed cases, deaths, hospitalizations, and testing
 
 ## Data exploration
 
-In order to get insights on the data, I need to analyse the datasets and identify the correlations.  
+In order to get insights on the data, I need to analyse the datasets and identify the correlation between vaccination and infections and deaths.  
 I will explore the following questions:  
 
 - What is the likelihood of being infected and likelihood of dying once infected by country?
@@ -27,11 +27,11 @@ I will explore the following questions:
 
 
 The data exploration was done using **PostgreSQL**.
-The code can be seen [here](https://github.com/marianaobmorais/covid_data_exploration/blob/main/covid_data_exploration.sql).  
+The codes I wrote to answer the questions above can be seen [here](https://github.com/marianaobmorais/covid_data_exploration/blob/main/covid_data_exploration.sql).  
 
 **Datasets**:  
 
-I split the COVID-19 dataset into 2 CSV files in order to perform JOIN functions using SQL: covid_deaths.csv and covid_vaccination.csv
+I split the COVID-19 dataset into two .csv files in order to perform JOIN functions using SQL: covid_deaths.csv and covid_vaccination.csv (this could have been done with self join too, but since the original dataset has too many rows, I decided to follow Alex Freberg's recommendation and split it into two)
 
 ## Visualizations
 
