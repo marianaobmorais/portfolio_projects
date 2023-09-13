@@ -57,36 +57,24 @@ ORDER BY
 
 
 
--- 2. Rolling cases and deaths percentages
--- Shows how the new cases and new deaths percentages change from January 2020 to August 2023
+-- 2. Daily new cases and new deaths per country
+-- Shows the number of new cases and new deaths from January 2020 to August 2023
 
 SELECT
 	continent
 	,location
 	,date
 	,population
-	,rolling_new_cases
-	,(rolling_new_cases/CAST(population AS NUMERIC))*100 AS rolling_cases_rate
-	,rolling_new_deaths
-	,(rolling_new_deaths/CAST(population AS NUMERIC))*100 AS rolling_death_rate
+	,new_cases
+	,SUM(new_cases) 
+		OVER (PARTITION BY location ORDER BY location, date) AS rolling_new_cases
+	,new_deaths
+	,SUM(new_deaths)
+		OVER (PARTITION BY location ORDER BY location, date) AS rolling_new_deaths
 FROM
-	(
-	SELECT
-		continent
-		,location
-		,date
-		,population
-		,new_cases
-		,SUM(new_cases) 
-			OVER (PARTITION BY location ORDER BY location, date) AS rolling_new_cases
-		,new_deaths
-		,SUM(new_deaths)
-			OVER (PARTITION BY location ORDER BY location, date) AS rolling_new_deaths
-	FROM
-		covid_deaths
-	WHERE
-		continent IS NOT NULL
-	) AS rolling
+	covid_deaths
+WHERE
+	continent IS NOT NULL
 
 
 -- 3. Difference between cases and deaths in the years of 2020, 2021 and 2022
