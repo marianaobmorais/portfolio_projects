@@ -1,5 +1,5 @@
 -- COVID-19 Data Exploration 
--- Skills used: Joins, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+-- Skills used: Joins, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types, CASE expression
 
 -- Software: PostgreSQL
 
@@ -57,8 +57,40 @@ ORDER BY
 
 
 
--- 2. Difference between cases and deaths in the years of 2020, 2021 and 2022
--- Shows how the infection and deaths numbers changed between January 2020 and December 2022 by country
+-- 2. Rolling cases and deaths rates
+-- Shows how the new cases and new deaths rates change from January 2020 to August 2023
+
+SELECT
+	continent
+	,location
+	,date
+	,population
+	,rolling_new_cases
+	,(rolling_new_cases/CAST(population AS NUMERIC))*100 AS rolling_cases_rate
+	,rolling_new_deaths
+	,(rolling_new_deaths/CAST((CASE WHEN rolling_new_cases = 0 THEN 1 ELSE rolling_new_cases END) AS NUMERIC))*100 AS rolling_death_rate
+FROM
+	(
+	SELECT
+		continent
+		,location
+		,date
+		,population
+		,new_cases
+		,SUM(new_cases) 
+			OVER (PARTITION BY location ORDER BY location, date) AS rolling_new_cases
+		,new_deaths
+		,SUM(new_deaths)
+			OVER (PARTITION BY location ORDER BY location, date) AS rolling_new_deaths
+	FROM
+		covid_deaths
+	WHERE
+		continent IS NOT NULL
+	) AS rolling
+
+
+-- 3. Difference between cases and deaths in the years of 2020, 2021 and 2022
+-- Shows a side-by-side comparison of how the infection and deaths numbers changed between January 2020 and December 2022 by country
 
 SELECT 
 	year_2020.continent
@@ -136,7 +168,7 @@ ORDER BY
 
 
 
--- 3. Total number of deaths per continent
+-- 4. Total number of deaths per continent
 -- Shows total death count per continent
 
 SELECT
@@ -167,7 +199,7 @@ ORDER BY
 		
 
 
--- 4. Death percentage per continent
+-- 5. Death percentage per continent
 -- Shows likelihood of dying once infected by continent
 
 SELECT
@@ -201,7 +233,7 @@ GROUP BY
 -- VACCINATION --
 -----------------
 	
--- 5. Rolling vaccination vs population rate
+-- 6. Rolling vaccination vs population rate
 -- Shows percentage of population that has recieved at least one COVID-19 vaccine
 
 SELECT
@@ -239,7 +271,7 @@ FROM
 
 
 
--- 6. Population, Total cases, Total deaths and Vaccination rates
+-- 7. Population, Total cases, Total deaths and Vaccination rates
 -- Shows the changes in infection rate and death rate after vaccination started
 
 SELECT
