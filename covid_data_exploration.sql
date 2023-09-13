@@ -1,5 +1,5 @@
 -- COVID-19 Data Exploration 
--- Skills used: Joins, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types, CASE expression
+-- Skills used: Joins, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
 
 -- Software: PostgreSQL
 
@@ -57,8 +57,8 @@ ORDER BY
 
 
 
--- 2. Rolling cases and deaths rates
--- Shows how the new cases and new deaths rates change from January 2020 to August 2023
+-- 2. Rolling cases and deaths percentages
+-- Shows how the new cases and new deaths percentages change from January 2020 to August 2023
 
 SELECT
 	continent
@@ -68,7 +68,7 @@ SELECT
 	,rolling_new_cases
 	,(rolling_new_cases/CAST(population AS NUMERIC))*100 AS rolling_cases_rate
 	,rolling_new_deaths
-	,(rolling_new_deaths/CAST((CASE WHEN rolling_new_cases = 0 THEN 1 ELSE rolling_new_cases END) AS NUMERIC))*100 AS rolling_death_rate
+	,(rolling_new_deaths/CAST(population AS NUMERIC))*100 AS rolling_death_rate
 FROM
 	(
 	SELECT
