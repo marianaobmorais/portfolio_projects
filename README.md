@@ -33,7 +33,10 @@ I split the COVID-19 dataset into two .csv files in order to perform JOIN functi
 
 ## Visualizations
 
-The data visualization was done using **Tableau**. See the original dashboard here.
+The data visualization was done using **Tableau**. See the original dashboard [here](https://public.tableau.com/app/profile/mariana.morais1044/viz/Book1_16946533694530/Dashboard14).
+
+### Dashboard
+
 
 **Key findings**:
 
