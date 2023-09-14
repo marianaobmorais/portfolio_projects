@@ -36,11 +36,11 @@ LIMIT 1000;
 ------------------------
 
 -- 1. Population vs Total cases rate and Total cases vs Total deaths rate
--- Likelihood of being infected and likelihood of dying once infected by country
+-- Likelihood of being infected and likelihood of dying once infected per continent
 
 SELECT
 	continent
-	,location
+	--,location
 	,date
 	,population		-- (that's not precise bc the population number should have changed, but for the sake of this case study, I will consider the info from this data set)
 	,total_cases
@@ -257,49 +257,6 @@ FROM
 		,dea.date
 	) AS rolling_vaccinations;
 
-
-
--- 7. Population, Total cases, Total deaths and Vaccination rates
--- Shows the changes in infection rate and death rate after vaccination started
-
-SELECT
-	dea.continent
-	,dea.location
-	,dea.date
-	,dea.population
-	,dea.total_cases
-	,dea.total_deaths
-	,vac.total_vaccinations
-	,(CAST(dea.total_cases AS NUMERIC)/ CAST(dea.population AS NUMERIC))*100 AS infection_percentage
-	,(CAST(vac.total_vaccinations AS NUMERIC)/dea.population)*100 AS vaccination_percentage
-	,(CAST(dea.total_deaths AS NUMERIC)/ CAST(dea.total_cases AS NUMERIC))*100 AS deaths_per_case_percentage
-FROM
-	covid_deaths AS dea
-JOIN
-	(
-	SELECT
-	 	continent
-		,location
-		,date
-		,total_vaccinations
-	 FROM
-	 	covid_vaccination
-	WHERE
-		continent IS NOT NULL
-	ORDER BY
-		location
-		,date
-	) AS vac
-ON
-	dea.location = vac.location
-	AND
-	dea.date = vac.date
-WHERE
-	dea.continent IS NOT NULL
-ORDER BY
-	dea.location
-	,dea.date;
-	
 
 
 --------------------------------------------------
