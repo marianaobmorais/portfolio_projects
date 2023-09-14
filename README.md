@@ -1,4 +1,4 @@
-# Vaccination saves lives: COVID-19 case study
+# Vaccination saves lives: COVID-19 in Europe case study
 This case study on COVID-19 was based on [Alex Freberg’s Data Analyst Portfolio Project](https://youtu.be/qfyynHBFOsM?si=NCAmQc_-GDOsZLSz) for SQL and Tableau. After watching the tutorial, I decided to explore the data and do my own case study.  
 In this case study, I use SQL notions of **window functions, rolling numbers, extract from date, subqueries, aggregation functions**.
 
