@@ -39,16 +39,18 @@ The data visualization was done using **Tableau**. See the original dashboard [h
 ![Dashboard COVID case study](https://github.com/marianaobmorais/covid_data_exploration/assets/141265676/ce0d0668-18b1-4fc1-be60-d2b5646e3955)
 
 ### Key findings:
-1. Europe is the continent with the highest average infection percentage (17,01%) and the highest average deaths per case percentage (48,58%).
-2. The peak of death count in Europe happened in the week of January 17th, 2021 (39.750 deaths), and the vaccination started as of the week of December 6th, 2020.  The vaccination count peaked in the week of June 20th, 2021; in the same week, the death count reached the low of 6.058 deaths, which was the lowest mark since July, 2020.
-3. It is important to point out that the vaccine protection increases in the days following the dose. According to the [Australian Department of Health and Age Care](https://www.health.gov.au/our-work/covid-19-vaccines/is-it-true/is-it-true-how-long-does-it-take-for-the-vaccines-to-work), the "best protection until 7–14 days after the final dose recommended for your age group or individual health needs", that is why I decided to filter the date by weeks.
-4. The death rate "comes in waves" marking almost opposite symmetrical high and low points. Since June, 2022, the range of waves are smaller and the weekly death count is under 7.000 deaths for the rest of the year of 2022.
-5. The European country with the highest vaccination rate is Gibraltar with 406,43% of the population vaccinated, whereas the country with the highest vaccination count is Germany with 192.221.468 total shots.
-6. The average vaccination rate peaked in the week of February 13th, 2022 marking 111,6%, which means on average more than 100% of the european population got vaccinated that day - could it had been tourists or people outside the census? Answering this would require more data.
+1. **Europe** is the continent with the **highest average infection percentage (17,01%)** and the **highest average deaths per case percentage (48,58%)**.
+2. The peak of death count in Europe happened in the week of January 17th, 2021 (**39.750 deaths**), and the vaccination started as of the week of December 6th, 2020.  The vaccination count peaked in the week of June 20th, 2021; in the same week, the **death count reached the low of 6.058 deaths**, which was the lowest mark since July, 2020.
+3. It is important to point out that the vaccine protection increases in the days following the dose. According to the [Australian Department of Health and Age Care](https://www.health.gov.au/our-work/covid-19-vaccines/is-it-true/is-it-true-how-long-does-it-take-for-the-vaccines-to-work), the "best protection until 7–14 days after the final dose recommended for your age group or individual health needs", that is why I decided to filter the **date by weeks**.
+4. The **death rate "comes in waves"** marking almost opposite symmetrical high and low points. Since June, 2022, the range of waves are smaller and the weekly death count is under 7.000 deaths for the rest of the year of 2022.
+5. The European country with the highest vaccination rate is Gibraltar with **406,43% of the population vaccinated**, whereas the country with the highest vaccination count is Germany with **192.221.468 total shots**.
+6. The average vaccination rate peaked in the week of February 13th, 2022 marking **111,6%**, which means on average more than 100% of the european population got vaccinated that day - could it had been tourists or people outside the census? Answering this would require more data.
 
 ### A few other questions
 
 Some other questions that came along while I was doing the analysis that would require more data or a different business task:
 
 - How often and how long were the lockdowns in each country?
-- How does 
+- How does the population density correlates with the death rate?
+- How does the vaccination and testing correlates with the GPD per capita?
+
