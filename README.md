@@ -36,8 +36,18 @@ I split the COVID-19 dataset into two .csv files in order to perform JOIN functi
 The data visualization was done using **Tableau**. See the original dashboard [here](https://public.tableau.com/app/profile/mariana.morais1044/viz/Book1_16946533694530/Dashboard14).
 
 ### Dashboard
+![Dashboard COVID case study](https://github.com/marianaobmorais/covid_data_exploration/assets/141265676/ce0d0668-18b1-4fc1-be60-d2b5646e3955)
 
+### Key findings:
+1. Europe is the continent with the highest average infection percentage (17,01%) and the highest average deaths per case percentage (48,58%).
+2. The peak of death count in Europe happened in January 17th, 2021 (39.750 deaths), and the vaccination started as of November 29th, 2020.  The vaccination count peaked in June 20th, 2021.
+3. The European country with the highest vaccination rate is Gibraltar with 406,43% of the population vaccinated, whereas the country with the highest vaccination count is Germany with 192.221.468 total shots.
+4. The average vaccination rate peaked in February 13th, 2022 marking 111,6%, which means on average more than 100% of the european population got vaccinated that day - could it had been tourists or people outside the census? Answering this would require more data.
 
-**Key findings**:
 
 ## A few other questions
+
+Some other questions that came along while I was doing the analysis that would require more data or a different business task:
+
+- How often and how long were the lockdowns in each country?
+- 
