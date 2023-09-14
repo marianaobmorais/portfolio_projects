@@ -17,12 +17,11 @@ The data includes data on confirmed cases, deaths, hospitalizations, and testing
 In order to get insights on the data, I need to analyse the datasets and identify the correlation between vaccination and infections and deaths.  
 I will explore the following questions:  
 
-- What is the likelihood of being infected and likelihood of dying once infected per country?
-- How did the infection and deaths numbers change between January 2020 and December 2022 per country?
+- What is the likelihood of being infected and likelihood of dying once infected per continent?
+- How did the infection and deaths count change between January 2020 and August 2023 per country?
 - What is the total death count per continent?
-- What is the likelihood of dying once infected per continent?
 - What is the percentage of population who has recieved at least one COVID-19 vaccine?
-- How have the death rate changed after vaccination started?
+- How have the global death count changed after vaccination started?
 
 
 The data exploration was done using **PostgreSQL**.
