@@ -21,7 +21,7 @@ I will explore the following questions:
 - How did the infection and deaths count change between January 2020 and August 2023 per country?
 - What is the total death count per continent?
 - What is the percentage of population who has recieved at least one COVID-19 vaccine?
-- How have the global death count changed after vaccination started?
+- How have the death count changed after vaccination started?
 
 
 The data exploration was done using **PostgreSQL**.
