@@ -31,9 +31,9 @@ LIMIT 1000;
 
 
 
-------------------------
---INFECTION AND DEATHS--
-------------------------
+--------------------------
+-- INFECTION AND DEATHS --
+--------------------------
 
 -- 1. Population vs Total cases rate and Total cases vs Total deaths rate
 -- Likelihood of being infected and likelihood of dying once infected per continent
